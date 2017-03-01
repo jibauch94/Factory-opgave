@@ -10,28 +10,34 @@
  */
 public abstract class InfantryUnit {
 
+    private String name;
     private int range;
     private int armor;
     private int life;
     private int damage;
-    
+    private String race;
+
     public InfantryUnit(int range, int armor, int life, int damage) {
         this.range = range;
         this.armor = armor;
         this.life = life;
         this.damage = damage;
     }
-    
+
     public void takeDamage(int damage) {
         int reduction = (int) (Math.random() * armor);
         if (damage > reduction) {
             life = life - (damage - reduction);
+            System.out.println("Armor took " + reduction + " damage");
         }
+        else{System.out.println("Armor took all damage!!!!!");}
     }
-    
+
     public void attack(InfantryUnit unit) {
         int attackdamage = (int) (Math.random() * damage) + 1;
+        System.out.println(name + " attacked " + unit.getName());
         unit.takeDamage(attackdamage);
+        System.out.println(unit.getName() + " took " + "-" + attackdamage + " damage life remaining: " + unit.life);
     }
 
     public int getRange() {
@@ -65,5 +71,21 @@ public abstract class InfantryUnit {
     public void setDamage(int damage) {
         this.damage = damage;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
+
 }

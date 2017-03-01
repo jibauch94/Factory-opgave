@@ -18,6 +18,9 @@ public class Main {
         CrossbowMan crossbowMan = new CrossbowMan(10, 10, 20, 3);
 
         while (rockHauler.getLife() > 0 && crossbowMan.getLife() > 0) {
+            rockHauler.setName("rockhauler");
+            crossbowMan.setName("crossbowman");
+            
             rockHauler.attack(crossbowMan);
             crossbowMan.attack(rockHauler);
 
