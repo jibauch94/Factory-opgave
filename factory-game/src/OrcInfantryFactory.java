@@ -26,6 +26,7 @@ public class OrcInfantryFactory extends InfantryFactory {
                 break;
             case 5:
                 character = new Musketeer(1, 14, 18, 9);
+                break;
 
             default:
                 return null;
