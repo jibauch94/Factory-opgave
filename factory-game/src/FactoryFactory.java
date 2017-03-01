@@ -11,18 +11,18 @@
 public class FactoryFactory {
 
     public InfantryFactory createInfantryFactory(int race) {
+        InfantryFactory factory;
 
-        HumanInfantryFactory human = new HumanInfantryFactory();
-        OrcInfantryFactory orc = new OrcInfantryFactory();
-
-        if (race == 1) {
-            return human;
+        switch (race) {
+            case 1:
+                factory = new HumanInfantryFactory();
+                break;
+            case 2:
+                factory = new OrcInfantryFactory();
+                break;
+            default:
+                return null;
         }
-        if (race == 2) {
-            return orc;
-        } else {
-            return null;
-        }
-
+        return factory;
     }
 }

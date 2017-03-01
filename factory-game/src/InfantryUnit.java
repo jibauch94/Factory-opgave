@@ -22,6 +22,8 @@ public abstract class InfantryUnit {
         this.armor = armor;
         this.life = life;
         this.damage = damage;
+        this.name = name;
+        this.race = race;
     }
 
     public void takeDamage(int damage) {
@@ -29,15 +31,24 @@ public abstract class InfantryUnit {
         if (damage > reduction) {
             life = life - (damage - reduction);
             System.out.println("Armor took " + reduction + " damage");
+        } else {
+            System.out.println("Armor took all damage!!!!!");
         }
-        else{System.out.println("Armor took all damage!!!!!");}
     }
 
     public void attack(InfantryUnit unit) {
         int attackdamage = (int) (Math.random() * damage) + 1;
         System.out.println(name + " attacked " + unit.getName());
         unit.takeDamage(attackdamage);
-        System.out.println(unit.getName() + " took " + "-" + attackdamage + " damage life remaining: " + unit.life);
+        System.out.println(unit.getName() + " dealt " + attackdamage + " damage life remaining: " + unit.life);
+    }
+
+    public boolean alive() {
+        if (life > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int getRange() {

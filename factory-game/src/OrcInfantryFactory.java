@@ -13,19 +13,19 @@ public class OrcInfantryFactory extends InfantryFactory {
         InfantryUnit character;
         switch (techLevel) {
             case 1:
-                character = new RockHauler(3, 10, 10, 5);
+                character = new RockHauler(3, 5, 10, 5);
                 break;
             case 2:
-                character = new SpearTower(4, 11, 12, 6);
+                character = new SpearTower(4, 3, 12, 6);
                 break;
             case 3:
-                character = new Archer(5, 12, 14, 7);
+                character = new Archer(5, 5, 14, 7);
                 break;
             case 4:
-                character = new CrossbowMan(6, 13, 16, 8);
+                character = new CrossbowMan(6, 6, 16, 8);
                 break;
             case 5:
-                character = new Musketeer(1, 14, 18, 9);
+                character = new Musketeer(1, 7, 18, 9);
                 break;
 
             default:

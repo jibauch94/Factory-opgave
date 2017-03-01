@@ -9,7 +9,7 @@
  * @author jibba_000
  */
 public abstract class InfantryFactory {
-    public InfantryUnit creatUnit(int techLevel){
+    public InfantryUnit createUnit(int techLevel){
         return null;
     }
 }
