@@ -8,7 +8,7 @@
  *
  * @author jibba_000
  */
-public class InfantryUnit {
+public abstract class InfantryUnit {
 
     private int range;
     private int armor;

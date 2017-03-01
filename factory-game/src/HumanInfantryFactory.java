@@ -8,7 +8,7 @@
  *
  * @author jibba_000
  */
-public class HumanInfantryFactory {
+public class HumanInfantryFactory extends InfantryFactory {
 
     public InfantryUnit createUnit(int techLevel) {
         InfantryUnit character;
